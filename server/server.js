@@ -9,5 +9,8 @@ app.use(express.urlencoded({extended:true}));
 
 require("./config/mongoose.config")
 require("./routes/product.routes")(app);
+//above line stands in for 
+//const AllProductRoutes = require("./routes/product/routes");
+//AllProductRoutes(app);
 
 app.listen(PORT, ()=>console.log(`Listening on port ${PORT}.`));

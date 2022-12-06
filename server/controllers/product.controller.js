@@ -1,7 +1,7 @@
 const Product = require("../models/product.model")
 
 const findAllProducts = (req, res) => {
-    Product.find()
+    Product.find({})
     .then((allTheProducts) => {
         res.json({ products: allTheProducts})
     })
