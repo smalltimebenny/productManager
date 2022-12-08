@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 
 
 const Detail = (props) => {
-	const [product, setProduct] = useState({})
+	const [product, setProduct] = useState("")
 	const {id} =useParams();
 	// console.log("top")
 	// console.log(product)
@@ -17,7 +17,7 @@ const Detail = (props) => {
 			})
 			.catch( err => console.log("promise error", err))
 	}, [])
-console.log("middle",setProduct)
+// console.log("middle",product)
 	return (
 		<div>
 			<p>Title: {product.title}</p>

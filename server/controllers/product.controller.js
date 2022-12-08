@@ -20,8 +20,22 @@ const findOneProduct = (req, res) => {
         .catch(err => res.json(err));
 }
 
+const updateProduct = (req, res) => {
+    Product.findOneAndUpdate({_id:req.params.id},req.body, {new:true})
+        .then(updatedProduct => res.json(updatedProduct))
+        .catch( err => res.json("updateProduct controller function error", err))
+}
+
+const deleteProduct = (req, res) => {
+    Product.deleteOne({_id:req.params.id})
+        .then(deleteTheThing => res.json(deleteTheThing))
+        .catch(err => res.json(err))
+}
+
 module.exports = {
     findAllProducts,
     makeAProduct,
     findOneProduct,
+    updateProduct,
+    deleteProduct,
 }
