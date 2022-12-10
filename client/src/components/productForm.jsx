@@ -26,7 +26,7 @@ const ProductForm = (props) =>{
 	};
 
 		return (
-			<form onSubmit={productAddForm}>
+			<form className="form" onSubmit={productAddForm}>
 				<label>Title:</label>
 				<input type="text" onChange={ (e) => setTitle(e.target.value)} />
 				<label>Price:</label>
